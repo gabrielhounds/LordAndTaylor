@@ -131,6 +131,7 @@ img {
 	left: 24 / 2048 * 100%;
 	width: 480 / 2048 * 100%;
 	height: 234 / 1200 * 100%;
+	text-align: center;
 
 	@include portrait {
 		top: 80 / 2048 * 100%;
@@ -158,8 +159,6 @@ img {
 	@include mobile {
 		height: 800 / 2048 * 100%;
 	}
-
-
 }
 
 .rightImage {
@@ -205,7 +204,6 @@ img {
 		width: 600 / 1936 * 100%;
 		height: 90 / 2048 * 100%;
 	}
-
 }
 
 .cta1 {
@@ -216,7 +214,6 @@ img {
 		left: 1062 / 1936 * 100%;
 		top: 400 / 2048 * 100%;
 	}
-
 }
 
 .cta2 {
@@ -271,7 +268,6 @@ img {
 		width: 800 / 1936 * 100%;
 		height: 56 / 2048 * 100%;
 	}
-
 }
 
 .frame1 {
@@ -339,6 +335,15 @@ img {
 }
 
 .frame5 {
+
+	.headline {
+		top: 340 / 1200 * 100%;
+		@include portrait {
+			top: 328 / 2048 * 100%;
+			left: 244 / 1936 * 100%;
+		}
+	}
+
 	.centerImage {
 		@include background-image('centerImg5.jpg', cover, top center);
 	}
@@ -349,10 +354,19 @@ img {
 
 	.cta1 {
 		@include background-image('cta_shopActivewear.png', 60%, center center);
+		top: 740 / 1200 * 100%;
+		@include portrait {
+			top: 410 / 2048 * 100%;
+		}
 	}
 
 	.cta2 {
 		@include background-image('cta_shopDenim.png', 60%, center center);
+		top: 840 / 1200 * 100%;
+		@include portrait {
+			top: 548 / 2048 * 100%;
+		}
+
 	}
 }
 

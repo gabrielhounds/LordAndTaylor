@@ -54,6 +54,7 @@ img {
   left: 1.17188%;
   width: 23.4375%;
   height: 19.5%;
+  text-align: center;
 }
 
 @media all and (orientation: portrait) {
@@ -321,6 +322,17 @@ img {
   background-repeat: no-repeat;
 }
 
+.frame5 .headline {
+  top: 28.33333%;
+}
+
+@media all and (orientation: portrait) {
+  .frame5 .headline {
+    top: 16.01562%;
+    left: 12.60331%;
+  }
+}
+
 .frame5 .centerImage {
   background-image: url(centerImg5.jpg);
   background-size: cover;
@@ -340,6 +352,13 @@ img {
   background-size: 60%;
   background-position: center center;
   background-repeat: no-repeat;
+  top: 61.66667%;
+}
+
+@media all and (orientation: portrait) {
+  .frame5 .cta1 {
+    top: 20.01953%;
+  }
 }
 
 .frame5 .cta2 {
@@ -347,6 +366,13 @@ img {
   background-size: 60%;
   background-position: center center;
   background-repeat: no-repeat;
+  top: 70%;
+}
+
+@media all and (orientation: portrait) {
+  .frame5 .cta2 {
+    top: 26.75781%;
+  }
 }
 
 #frame1 {
