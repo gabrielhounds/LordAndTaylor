@@ -1,0 +1,308 @@
+// Some Color Variables
+$color-bg: #faedec;
+$color-main: #d7b9b3;
+
+$width: 2048px;
+$height: 1200px;
+
+// Media Query Responsize Desktop
+$large:  "(min-width: 1024px)";
+$medium: "(min-width: 768px) and (max-width: 1023px)";
+$small:  "(max-width: 767px)";
+
+// Media Query Devices
+$desktop: "(min-device-width: 1024px)";
+$tablet:  "(min-device-width: 768px) and (max-device-width: 1023px)";
+$mobile:  "(max-device-width: 767px)";
+
+@mixin full-center{
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin horiz-center {
+	left: 50%;
+	transform: translate(-50%);
+}
+
+@mixin fullscreen {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin background-image($name, $size, $position, $repeat: no-repeat){
+	background-image: url(unquote($name));
+	background-size: $size;
+	background-position: $position;
+	background-repeat: $repeat;
+}
+
+@mixin hitarea {
+	top: 0!important;
+	left: 0!important;
+	width: 100%!important;
+	height: 100%!important;
+}
+
+@mixin responsive-size($width, $height, $w-context: 2048, $h-context: 1200) {
+	width: $width / $w-context * 100vw;
+	height: $height / $h-context * 100vh;
+}
+
+@mixin responsive-pos($top, $left, $t-context: 1200, $l-context: 2048) {
+	top: $top / $t-context * 100vh;
+	left: $left / $l-context * 100vw;
+}
+
+@mixin responsive($width, $height, $top, $left, $w-context: 2048, $h-context: 1200) {
+	width: $width / $w-context * 100vw;
+	height: $height / $h-context * 100vh;
+	top: $top / $h-context * 100vh;
+	left: $left / $w-context * 100vw;
+}
+
+@mixin portrait {
+	@media all and (orientation : portrait) {
+		@content;
+	}
+}
+
+@mixin landscape {
+	@media all and (orientation : landscape) {
+		@content;
+	}
+}
+
+body, * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+div {
+	position: absolute;
+	display: block;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+///////
+#main {
+	@include fullscreen;
+	background-color: $color-bg;
+}
+
+.logo {
+	top: 82 / 1200 * 100%;
+	left: 108 / 2048 * 100%;
+	width: 354 / 2048 * 100%;
+	height: 111 / 1200 * 100%;
+	max-width: 354px;
+	max-height: 111px;
+}
+
+.frame {
+	@include fullscreen;
+}
+
+.headline {
+	top: 240 / 1200 * 100%;
+	left: 24 / 2048 * 100%;
+	width: 480 / 2048 * 100%;
+	height: 234 / 1200 * 100%;
+}
+
+.centerImage {
+	top: 0;
+	left: 50%;
+	transform: translate(-50%);
+	width: 764 / 2048 * 100%;
+	height: 1034 / 1200 * 100%;
+}
+
+.rightImage {
+	top: 130 / 1200 * 100%;
+	left: 1328 / 2048 * 100%;
+	width: 700 / 2048 * 100%;
+	height: 790 / 1200 * 100%;
+}
+
+.videoHolder {
+	width: 486 / 2048 * 100%;
+	height: 274 / 1200 * 100%;
+	left: 40 / 2048 * 100%;
+	top: 540 / 1200 * 100%;
+	background-color: #9eb7ff;
+}
+
+.cta {
+	width: 380 / 2048 * 100%;
+	height: 80 / 1200 * 100%;
+	background-color: $color-main;
+}
+
+.cta1 {
+	left: 80 / 2048 * 100%;
+	top: 840 / 1200 * 100%;
+}
+
+.cta2 {
+	left: 80 / 2048 * 100%;
+	top: 940 / 1200 * 100%;
+}
+
+.nav {
+	width: 340 / 2048 * 100%;
+	height: 56 / 1200 * 100%;
+	bottom: 5%;
+	left: 50%;
+	transform: translate(-50%);
+	display: flex;
+
+	div {
+		position: relative;
+		width: 100 / 7 * 100%;
+		height: 100%;
+	}
+
+	.arrowLeft {
+		@include background-image('arrowLt.png', contain, center center);
+	}
+
+	.arrowRight {
+		@include background-image('arrowRt.png', contain, center center);
+	}
+
+	.square {
+		@include background-image('navSquare.png', contain, center center);
+	}
+}
+
+.frame1 {
+	.centerImage {
+		@include background-image('centerImg1.jpg', cover, top center);
+	}
+
+	.rightImage {
+		@include background-image('rightImg1.jpg', contain, top center);
+	}
+
+	.cta1 {
+		@include background-image('cta_shopJeanJackets.png', 60%, center center);
+	}
+
+	.cta2 {
+		@include background-image('cta_shopJeans.png', 60%, center center);
+	}
+}
+
+.frame2 {
+	.centerImage {
+		@include background-image('centerImg2.jpg', cover, top center);
+	}
+
+	.rightImage {
+		@include background-image('rightImg2.jpg', contain, top center);
+	}
+
+	.cta1 {
+		@include background-image('cta_shopNow.png', 60%, center center);
+	}
+}
+
+.frame3 {
+	.centerImage {
+		@include background-image('centerImg3.jpg', cover, top center);
+	}
+
+	.rightImage {
+		@include background-image('rightImg3.jpg', contain, top center);
+	}
+
+	.cta1 {
+		@include background-image('cta_shopNow.png', 60%, center center);
+	}
+}
+
+.frame4 {
+	.centerImage {
+		@include background-image('centerImg4.jpg', cover, top center);
+	}
+
+	.rightImage {
+		@include background-image('rightImg4.jpg', contain, top center);
+	}
+
+	.cta1 {
+		@include background-image('cta_shopShoes.png', 60%, center center);
+	}
+
+	.cta2 {
+		@include background-image('cta_shopHandbags.png', 60%, center center);
+	}
+}
+
+.frame5 {
+	.centerImage {
+		@include background-image('centerImg5.jpg', cover, top center);
+	}
+
+	.rightImage {
+		@include background-image('rightImg5.jpg', contain, top center);
+	}
+
+	.cta1 {
+		@include background-image('cta_shopActivewear.png', 60%, center center);
+	}
+
+	.cta2 {
+		@include background-image('cta_shopDenim.png', 60%, center center);
+	}
+}
+
+#frame1 {
+	opacity: 0;
+}
+
+#frame2 {
+	opacity: 0;
+}
+
+#frame3 {
+	opacity: 0;
+}
+
+#frame4 {
+	opacity: 0;
+}
+
+#frame5 {
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
