@@ -31,6 +31,17 @@ img {
   max-height: 111px;
 }
 
+@media all and (orientation: portrait) {
+  .logo {
+    top: 6.10352%;
+    left: 17.8719%;
+    width: 23.86364%;
+    height: 7.08008%;
+    max-width: 462px;
+    max-height: 145px;
+  }
+}
+
 .frame {
   top: 0;
   left: 0;
@@ -45,6 +56,15 @@ img {
   height: 19.5%;
 }
 
+@media all and (orientation: portrait) {
+  .headline {
+    top: 3.90625%;
+    left: 53.20248%;
+    width: 30.32025%;
+    height: 13.28125%;
+  }
+}
+
 .centerImage {
   top: 0;
   left: 50%;
@@ -53,11 +73,36 @@ img {
   height: 86.16667%;
 }
 
+@media all and (orientation: portrait) {
+  .centerImage {
+    top: 34.17969%;
+    left: 7.85124%;
+    transform: translate(0);
+    width: 38.63636%;
+    height: 57.8125%;
+  }
+}
+
+@media all and (orientation: portrait) and (max-device-width: 767px) {
+  .centerImage {
+    height: 39.0625%;
+  }
+}
+
 .rightImage {
   top: 10.83333%;
   left: 64.84375%;
   width: 34.17969%;
   height: 65.83333%;
+}
+
+@media all and (orientation: portrait) {
+  .rightImage {
+    top: 35.9375%;
+    left: 44.11157%;
+    width: 49.79339%;
+    height: 53.95508%;
+  }
 }
 
 .videoHolder {
@@ -68,10 +113,33 @@ img {
   background-color: #9eb7ff;
 }
 
+@media all and (orientation: portrait) {
+  .videoHolder {
+    width: 30.99174%;
+    height: 16.40625%;
+    left: 15.18595%;
+    top: 14.94141%;
+  }
+}
+
 .cta {
   width: 18.55469%;
   height: 6.66667%;
   background-color: #d7b9b3;
+}
+
+@media all and (orientation: portrait) {
+  .cta {
+    width: 27.47934%;
+    height: 5.37109%;
+  }
+}
+
+@media all and (orientation: portrait) and (max-device-width: 767px) {
+  .cta {
+    width: 30.99174%;
+    height: 4.39453%;
+  }
 }
 
 .cta1 {
@@ -79,9 +147,23 @@ img {
   top: 70%;
 }
 
+@media all and (orientation: portrait) {
+  .cta1 {
+    left: 54.85537%;
+    top: 19.53125%;
+  }
+}
+
 .cta2 {
   left: 3.90625%;
   top: 78.33333%;
+}
+
+@media all and (orientation: portrait) {
+  .cta2 {
+    left: 54.85537%;
+    top: 26.26953%;
+  }
 }
 
 .nav {
@@ -118,6 +200,27 @@ img {
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
+  opacity: 0.35;
+}
+
+.nav .square1 {
+  opacity: 1;
+}
+
+@media all and (orientation: portrait) {
+  .nav {
+    bottom: 2%;
+    width: 17.56198%;
+    height: 2.73438%;
+  }
+}
+
+@media all and (orientation: portrait) and (max-device-width: 767px) {
+  .nav {
+    bottom: 5%;
+    width: 41.32231%;
+    height: 2.73438%;
+  }
 }
 
 .frame1 .centerImage {
@@ -247,7 +350,7 @@ img {
 }
 
 #frame1 {
-  opacity: 0;
+  opacity: 1;
 }
 
 #frame2 {
@@ -263,5 +366,5 @@ img {
 }
 
 #frame5 {
-  opacity: 1;
+  opacity: 0;
 }

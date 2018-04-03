@@ -76,6 +76,12 @@ $mobile:  "(max-device-width: 767px)";
 	}
 }
 
+@mixin mobile {
+	@media all and (orientation : portrait) and (max-device-width : 767px) {
+		@content;
+	}
+}
+
 body, * {
 	margin: 0;
 	padding: 0;
@@ -105,6 +111,15 @@ img {
 	height: 111 / 1200 * 100%;
 	max-width: 354px;
 	max-height: 111px;
+
+	@include portrait {
+		top: 125 / 2048 * 100%;
+		left: 346 / 1936 * 100%;
+		width: 462 / 1936 * 100%;
+		height: 145 / 2048 * 100%;
+		max-width: 462px;
+		max-height: 145px;
+	}
 }
 
 .frame {
@@ -116,6 +131,13 @@ img {
 	left: 24 / 2048 * 100%;
 	width: 480 / 2048 * 100%;
 	height: 234 / 1200 * 100%;
+
+	@include portrait {
+		top: 80 / 2048 * 100%;
+		left: 1030 / 1936 * 100%;
+		width: 587 / 1936 * 100%;
+		height: 272 / 2048 * 100%;
+	}
 }
 
 .centerImage {
@@ -124,6 +146,20 @@ img {
 	transform: translate(-50%);
 	width: 764 / 2048 * 100%;
 	height: 1034 / 1200 * 100%;
+
+	@include portrait {
+		top: 700 / 2048 * 100%;
+		left: 152 / 1936 * 100%;
+		transform: translate(0);
+		width: 748 / 1936 * 100%;
+		height: 1184 / 2048 * 100%;
+	}
+
+	@include mobile {
+		height: 800 / 2048 * 100%;
+	}
+
+
 }
 
 .rightImage {
@@ -131,6 +167,13 @@ img {
 	left: 1328 / 2048 * 100%;
 	width: 700 / 2048 * 100%;
 	height: 790 / 1200 * 100%;
+
+	@include portrait {
+		top: 736 / 2048 * 100%;
+		left: 854 / 1936 * 100%;
+		width: 964 / 1936 * 100%;
+		height: 1105 / 2048 * 100%;
+	}
 }
 
 .videoHolder {
@@ -139,22 +182,51 @@ img {
 	left: 40 / 2048 * 100%;
 	top: 540 / 1200 * 100%;
 	background-color: #9eb7ff;
+
+	@include portrait {
+		width: 600 / 1936 * 100%;
+		height: 336 / 2048 * 100%;
+		left: 294 / 1936 * 100%;
+		top: 306 / 2048 * 100%;
+	}
 }
 
 .cta {
 	width: 380 / 2048 * 100%;
 	height: 80 / 1200 * 100%;
 	background-color: $color-main;
+
+	@include portrait {
+		width: 532 / 1936 * 100%;
+		height: 110 / 2048 * 100%;
+	}
+
+	@include mobile {
+		width: 600 / 1936 * 100%;
+		height: 90 / 2048 * 100%;
+	}
+
 }
 
 .cta1 {
 	left: 80 / 2048 * 100%;
 	top: 840 / 1200 * 100%;
+
+	@include portrait {
+		left: 1062 / 1936 * 100%;
+		top: 400 / 2048 * 100%;
+	}
+
 }
 
 .cta2 {
 	left: 80 / 2048 * 100%;
 	top: 940 / 1200 * 100%;
+
+	@include portrait {
+		left: 1062 / 1936 * 100%;
+		top: 538 / 2048 * 100%;
+	}
 }
 
 .nav {
@@ -181,7 +253,25 @@ img {
 
 	.square {
 		@include background-image('navSquare.png', contain, center center);
+		opacity: 0.35;
 	}
+
+	.square1 {
+		opacity: 1;
+	}
+
+	@include portrait {
+		bottom: 2%;
+		width: 340 / 1936 * 100%;
+		height: 56 / 2048 * 100%;
+	}
+
+	@include mobile {
+		bottom: 5%;
+		width: 800 / 1936 * 100%;
+		height: 56 / 2048 * 100%;
+	}
+
 }
 
 .frame1 {
@@ -267,7 +357,7 @@ img {
 }
 
 #frame1 {
-	opacity: 0;
+	opacity: 1;
 }
 
 #frame2 {
@@ -283,7 +373,7 @@ img {
 }
 
 #frame5 {
-	opacity: 1;
+	opacity: 0;
 }
 
 
