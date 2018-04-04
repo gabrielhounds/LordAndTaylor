@@ -1,64 +1,63 @@
 $(document).ready(function(){
 	init();
 });
-
 function init() {
 	console.log('init');
 	var t = TweenMax;
 	var tl = new TimelineMax({ paused : true });
-
 	var frameNum = 1;
-
 	var arrowLeft = $('.arrowLeft');
 	var arrowRight = $('.arrowRight');
 	var cta = $('div .cta');
-
 	var frames = $('#frame1, #frame2, #frame3, #frame4, #frame5');
-
+	var theFrame;
 	t.set(frames, {autoAlpha:0});
 	t.set('#frame1', {autoAlpha:1})
-
+	function frameIn(frameNum) {
+		theFrame = $('#frame' + frameNum + ' div');
+		t.staggerFrom(theFrame, 0.9, {opacity:0, ease:Expo.easeOut}, 0.1);
+	}
 	function handleRightClick() {
 		t.killAll();
 		$('.square').css({ opacity : 0.35 });
 		t.set('.frame', {autoAlpha:0});
-
 		console.log('RIGHT CLICK');
 		switch (frameNum) {
 		  case 1:
 		  t.to('.square2', 0.2, {opacity:1});
 		  t.to('#frame2', 0.2, {autoAlpha:1});
-
+		  //frameIn($('#frame2 div'));
 	  	  frameNum = 2;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 2:
 	  	  t.to('.square3', 0.2, {opacity:1});
 		  t.to('#frame3', 0.2, {autoAlpha:1});
-
+		  //frameIn($('#frame3 div'));
 	  	  frameNum = 3;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 3:
 	  	  t.to('.square4', 0.2, {opacity:1});
 		  t.to('#frame4', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 4;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 4:
 	  	  t.to('.square5', 0.2, {opacity:1});
 		  t.to('#frame5', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 5;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 5:
 	  	  t.to('.square1', 0.2, {opacity:1});
 		  t.to('#frame1', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 1;
+	  	  frameIn(frameNum);
 	  	  break;
 		}
 		console.log(frameNum);
 	}
-
 	function handleLeftClick() {
 		t.killAll();
 		$('.square').css({ opacity : 0.35 });
@@ -68,37 +67,36 @@ function init() {
 		  case 1:
 		  t.to('.square5', 0.2, {opacity:1});
 		  t.to('#frame5', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 5;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 5:
 	  	  t.to('.square4', 0.2, {opacity:1});
 	  	  t.to('#frame4', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 4;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 4:
 	  	  t.to('.square3', 0.2, {opacity:1});
 	  	  t.to('#frame3', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 3;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 3:
 	  	  t.to('.square2', 0.2, {opacity:1});
 	  	  t.to('#frame2', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 2;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 2:
 	  	  t.to('.square1', 0.2, {opacity:1});
 	  	  t.to('#frame1', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 1;
+	  	  frameIn(frameNum);
 	  	  break;
 		}
 		console.log(frameNum);
 	}
-
 	function handleSquareClick(e) {
 		$('.square').css({ opacity : 0.35 });
 		t.set('.frame', {autoAlpha:0});
@@ -107,37 +105,36 @@ function init() {
 		  case 'square1':
 		  t.to('.square1', 0.2, {opacity:1});
 		  t.to('#frame1', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 1;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 'square2':
 	  	  t.to('.square2', 0.2, {opacity:1});
 	  	  t.to('#frame2', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 2;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 'square3':
 	  	  t.to('.square3', 0.2, {opacity:1});
 	  	  t.to('#frame3', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 3;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 'square4':
 	  	  t.to('.square4', 0.2, {opacity:1});
 	  	  t.to('#frame4', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 4;
+	  	  frameIn(frameNum);
 	  	  break;
 	  	  case 'square5':
 	  	  t.to('.square5', 0.2, {opacity:1});
 	  	  t.to('#frame5', 0.2, {autoAlpha:1});
-
 	  	  frameNum = 5;
+	  	  frameIn(frameNum);
 	  	  break;
 		}
 		console.log(frameNum);
 	}
-
 	$('.square').mouseover(function(){
 		t.to(this, 0.1, {scale:2.0, ease:Power2.easeOut});
 	}).mouseout(function(){
@@ -145,7 +142,6 @@ function init() {
 	}).click(function(e){
 		handleSquareClick(e);
 	});
-
 	$(arrowLeft).mouseover(function(){
 		t.to(this, 0.1, {scale:1.2, ease:Power2.easeOut});
 	}).mouseout(function(){
@@ -153,7 +149,6 @@ function init() {
 	}).click(function(){
 		handleLeftClick();
 	});
-
 	$(arrowRight).mouseover(function(){
 		t.to(this, 0.1, {scale:1.2, ease:Power2.easeOut});
 	}).mouseout(function(){
@@ -161,7 +156,6 @@ function init() {
 	}).click(function(){
 		handleRightClick();
 	});
-
 	$(cta).mouseover(function(e){
 		console.log(e);
 		t.to(this, 0.3, {scale:1.2, backgroundColor:'#e22d8b', ease:Power2.easeOut});
@@ -170,41 +164,5 @@ function init() {
 	}).click(function(){
 		//handleRightClick();
 	});
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //

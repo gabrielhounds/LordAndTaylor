@@ -286,6 +286,7 @@ img {
 		@include portrait {
 			background-size: 80%;
 		}
+
 	}
 
 	.cta2 {
@@ -310,6 +311,7 @@ img {
 		@include portrait {
 			background-size: 80%;
 		}
+
 	}
 }
 
@@ -327,6 +329,7 @@ img {
 		@include portrait {
 			background-size: 80%;
 		}
+
 	}
 }
 
@@ -344,6 +347,7 @@ img {
 		@include portrait {
 			background-size: 80%;
 		}
+
 	}
 
 	.cta2 {
@@ -351,6 +355,7 @@ img {
 		@include portrait {
 			background-size: 80%;
 		}
+
 	}
 }
 
@@ -379,6 +384,7 @@ img {
 			top: 410 / 2048 * 100%;
 			background-size: 80%;
 		}
+
 	}
 
 	.cta2 {
@@ -389,12 +395,7 @@ img {
 			background-size: 80%;
 		}
 
-	}
-}
 
-.cta {
-	@include mobile {
-		background-size: 100%;
 	}
 }
 

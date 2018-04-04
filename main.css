@@ -414,12 +414,6 @@ img {
   }
 }
 
-@media all and (orientation: portrait) and (max-device-width: 767px) {
-  .cta {
-    background-size: 100%;
-  }
-}
-
 #frame1 {
   opacity: 1;
 }
