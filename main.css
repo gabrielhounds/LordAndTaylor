@@ -140,6 +140,7 @@ img {
   .cta {
     width: 30.99174%;
     height: 4.39453%;
+    background-size: 80%;
   }
 }
 
@@ -245,11 +246,23 @@ img {
   background-repeat: no-repeat;
 }
 
+@media all and (orientation: portrait) {
+  .frame1 .cta1 {
+    background-size: 80%;
+  }
+}
+
 .frame1 .cta2 {
   background-image: url(cta_shopJeans.png);
   background-size: 60%;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+@media all and (orientation: portrait) {
+  .frame1 .cta2 {
+    background-size: 80%;
+  }
 }
 
 .frame2 .centerImage {
@@ -273,6 +286,12 @@ img {
   background-repeat: no-repeat;
 }
 
+@media all and (orientation: portrait) {
+  .frame2 .cta1 {
+    background-size: 80%;
+  }
+}
+
 .frame3 .centerImage {
   background-image: url(centerImg3.jpg);
   background-size: cover;
@@ -292,6 +311,12 @@ img {
   background-size: 60%;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+@media all and (orientation: portrait) {
+  .frame3 .cta1 {
+    background-size: 80%;
+  }
 }
 
 .frame4 .centerImage {
@@ -315,11 +340,23 @@ img {
   background-repeat: no-repeat;
 }
 
+@media all and (orientation: portrait) {
+  .frame4 .cta1 {
+    background-size: 80%;
+  }
+}
+
 .frame4 .cta2 {
   background-image: url(cta_shopHandbags.png);
   background-size: 60%;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+@media all and (orientation: portrait) {
+  .frame4 .cta2 {
+    background-size: 80%;
+  }
 }
 
 .frame5 .headline {
@@ -358,6 +395,7 @@ img {
 @media all and (orientation: portrait) {
   .frame5 .cta1 {
     top: 20.01953%;
+    background-size: 80%;
   }
 }
 
@@ -372,6 +410,13 @@ img {
 @media all and (orientation: portrait) {
   .frame5 .cta2 {
     top: 26.75781%;
+    background-size: 80%;
+  }
+}
+
+@media all and (orientation: portrait) and (max-device-width: 767px) {
+  .cta {
+    background-size: 100%;
   }
 }
 

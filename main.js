@@ -11,8 +11,12 @@ function init() {
 
 	var arrowLeft = $('.arrowLeft');
 	var arrowRight = $('.arrowRight');
+	var cta = $('div .cta');
 
 	var frames = $('#frame1, #frame2, #frame3, #frame4, #frame5');
+
+	t.set(frames, {autoAlpha:0});
+	t.set('#frame1', {autoAlpha:1})
 
 	function handleRightClick() {
 		t.killAll();
@@ -134,17 +138,73 @@ function init() {
 		console.log(frameNum);
 	}
 
-	$('.square').click(function(e){
+	$('.square').mouseover(function(){
+		t.to(this, 0.1, {scale:2.0, ease:Power2.easeOut});
+	}).mouseout(function(){
+		t.to(this, 0.3, {scale:1, ease:Back.easeOut});
+	}).click(function(e){
 		handleSquareClick(e);
 	});
 
-	$(arrowLeft).click(function(){
+	$(arrowLeft).mouseover(function(){
+		t.to(this, 0.1, {scale:1.2, ease:Power2.easeOut});
+	}).mouseout(function(){
+		t.to(this, 0.3, {scale:1, ease:Back.easeOut});
+	}).click(function(){
 		handleLeftClick();
 	});
 
-	$(arrowRight).click(function(){
+	$(arrowRight).mouseover(function(){
+		t.to(this, 0.1, {scale:1.2, ease:Power2.easeOut});
+	}).mouseout(function(){
+		t.to(this, 0.3, {scale:1, ease:Back.easeOut});
+	}).click(function(){
 		handleRightClick();
 	});
 
+	$(cta).mouseover(function(e){
+		console.log(e);
+		t.to(this, 0.3, {scale:1.2, backgroundColor:'#e22d8b', ease:Power2.easeOut});
+	}).mouseout(function(e){
+		t.to(this, 0.3, {scale:1, backgroundColor:'#d7b9b3', ease:Back.easeOut});
+	}).click(function(){
+		//handleRightClick();
+	});
+
+
+
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

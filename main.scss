@@ -198,11 +198,13 @@ img {
 	@include portrait {
 		width: 532 / 1936 * 100%;
 		height: 110 / 2048 * 100%;
+
 	}
 
 	@include mobile {
 		width: 600 / 1936 * 100%;
 		height: 90 / 2048 * 100%;
+		background-size: 80%;
 	}
 }
 
@@ -281,10 +283,16 @@ img {
 
 	.cta1 {
 		@include background-image('cta_shopJeanJackets.png', 60%, center center);
+		@include portrait {
+			background-size: 80%;
+		}
 	}
 
 	.cta2 {
 		@include background-image('cta_shopJeans.png', 60%, center center);
+		@include portrait {
+			background-size: 80%;
+		}
 	}
 }
 
@@ -299,6 +307,9 @@ img {
 
 	.cta1 {
 		@include background-image('cta_shopNow.png', 60%, center center);
+		@include portrait {
+			background-size: 80%;
+		}
 	}
 }
 
@@ -313,6 +324,9 @@ img {
 
 	.cta1 {
 		@include background-image('cta_shopNow.png', 60%, center center);
+		@include portrait {
+			background-size: 80%;
+		}
 	}
 }
 
@@ -327,10 +341,16 @@ img {
 
 	.cta1 {
 		@include background-image('cta_shopShoes.png', 60%, center center);
+		@include portrait {
+			background-size: 80%;
+		}
 	}
 
 	.cta2 {
 		@include background-image('cta_shopHandbags.png', 60%, center center);
+		@include portrait {
+			background-size: 80%;
+		}
 	}
 }
 
@@ -357,6 +377,7 @@ img {
 		top: 740 / 1200 * 100%;
 		@include portrait {
 			top: 410 / 2048 * 100%;
+			background-size: 80%;
 		}
 	}
 
@@ -365,8 +386,15 @@ img {
 		top: 840 / 1200 * 100%;
 		@include portrait {
 			top: 548 / 2048 * 100%;
+			background-size: 80%;
 		}
 
+	}
+}
+
+.cta {
+	@include mobile {
+		background-size: 100%;
 	}
 }
 
