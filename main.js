@@ -14,8 +14,10 @@ function init() {
 	t.set(frames, {autoAlpha:0});
 	t.set('#frame1', {autoAlpha:1})
 	function frameIn(frameNum) {
+
 		theFrame = $('#frame' + frameNum + ' div');
 		t.staggerFrom(theFrame, 0.9, {opacity:0, ease:Expo.easeOut}, 0.1);
+
 	}
 	function handleRightClick() {
 		t.killAll();
